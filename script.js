@@ -45,7 +45,6 @@ window.addEventListener("load", () => {
 document
   .getElementById("contactForm")
   .addEventListener("submit", function (event) {
-    event.preventDefault();
 
     let isValid = true;
 
@@ -64,27 +63,31 @@ document
 
     // Validate Name
     if (nameInput.value.trim() === "") {
+      event.preventDefault();
       nameError.textContent = "Name is required.";
       isValid = false;
     }
 
     // Validate Email
     if (emailInput.value.trim() === "") {
+      event.preventDefault();
       emailError.textContent = "Email is required.";
       isValid = false;
     }
 
     // Validate Message
     if (messageInput.value.trim() === "") {
+      event.preventDefault();
       messageError.textContent = "Message is required.";
       isValid = false;
     }
 
     if (isValid) {
       console.log("Form submitted successfully!");
-      alert("Form submitted successfully!"); 
-      this.reset();
     } else {
       console.log("Form validation failed.");
     }
   });
+
+
+ 
