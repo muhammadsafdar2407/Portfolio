@@ -213,3 +213,83 @@ textarea:focus {
 #Experience {
     margin-top: -10rem;
 }
+
+.navbar {
+  background: rgba(33, 33, 33, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(245, 101, 57, 0.1);
+}
+
+.navbar-logo a {
+  position: relative;
+}
+
+.navbar-logo a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #f56539 0%, #ff7651 100%);
+  transition: width 0.3s ease;
+}
+
+.navbar-logo a:hover::after {
+  width: 100%;
+}
+
+.nav-link {
+  position: relative;
+  font-weight: 500;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #f56539 0%, #ff7651 100%);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.mobile-menu-btn {
+  transition: transform 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+  transform: scale(1.1);
+}
+
+.mobile-menu {
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+section[id] {
+  padding-top: 50px;
+}
+
+@media (min-width: 1024px) {
+  section[id] {
+    padding-top: 50px;
+  }
+}

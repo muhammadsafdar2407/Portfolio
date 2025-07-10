@@ -89,5 +89,35 @@ document
     }
   });
 
+  document.addEventListener('DOMContentLoaded', function() {
+  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+  const mobileMenu = document.querySelector('.mobile-menu');
 
- 
+  // Handle mobile menu toggle
+  mobileMenuBtn.addEventListener('click', function() {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Close mobile menu when clicking on a link
+  const mobileLinks = document.querySelectorAll('.mobile-menu a');
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      mobileMenu.classList.add('hidden');
+    });
+  });
+
+  // Smooth scroll for navigation links
+  const navLinks = document.querySelectorAll('a[href^="#"]');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+}); 
